@@ -1,9 +1,24 @@
 aid: xinhe-technology
 name: Xinhe Technology
-description: 'Xinhe Technology is a company surfaced as a portfolio company of dcm-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Xinhe Technology (Shanghai Xinhe Box Technology Co., Ltd. / 上海心盒科技有限公司) operates
+  心愿盒 Match Box, a consumer experience co-creation platform. Brands distribute product samples to
+  precisely targeted consumer segments matched on age, gender, occupation, and consumption-preference
+  tags, collect structured questionnaire feedback and reviews for agile marketing iteration, and convert
+  triallists into private-domain traffic on WeChat official accounts and mini programs. A DCM Ventures
+  portfolio company; it publishes no public developer portal or API surface as of July 2026.'
 url: https://raw.githubusercontent.com/api-evangelist/xinhe-technology/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://www.xinhekeji.net/logo192.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +27,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Enterprise
+- Consumer Insights
+- Product Sampling
+- Customer Experience
+- Marketing
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +43,18 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/xinhe-technology-domain-security.yml
 - type: Website
-  url: https://xinhekeji.net/
+  url: https://www.xinhekeji.net/
+- type: Login
+  url: http://cem.xinhekeji.net
+- type: Support
+  url: https://www.xinhekeji.net/ContactUs
+- type: LLMsTxt
+  url: llms/xinhe-technology-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1

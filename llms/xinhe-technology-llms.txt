@@ -1,0 +1,22 @@
+# Xinhe Technology (心愿盒 Match Box)
+
+> Shanghai Xinhe Box Technology Co., Ltd. (上海心盒科技有限公司) operates 心愿盒 Match Box, a consumer experience co-creation platform. Brands distribute product samples to precisely targeted consumer segments (matched on age, gender, occupation, and consumption-preference tags), collect structured questionnaire feedback plus free-form reviews for agile marketing iteration, and convert triallists into private-domain traffic on the brand's WeChat official account or mini program. Backed by DCM Ventures. The company publishes no public developer portal, API documentation, or machine-readable API specifications as of 2026-07-21.
+
+<!--
+generated: '2026-07-21'
+method: generated
+source: apis.yml + https://www.xinhekeji.net/ (site bundle; /llms.txt returned 404)
+-->
+
+## Company
+
+- [Website (Match Box 消费者体验共创平台)](https://www.xinhekeji.net/): Product marketing site (Chinese; React SPA)
+- [Customer cases](https://www.xinhekeji.net/Example): Brand case studies (醒肌密, 金活医药, 偶爱你)
+- [About us](https://www.xinhekeji.net/AboutUs): Company profile
+- [Contact us](https://www.xinhekeji.net/ContactUs): Contact page (paul.xu@xinhekeji.net)
+- [Login / Register (brand console)](http://cem.xinhekeji.net): CEM console for brands; hosted in mainland China and generally unreachable from outside
+- ICP filing: 沪ICP备2021001714号-1 (Shanghai)
+
+## APIs
+
+No public APIs, developer documentation, OpenAPI/AsyncAPI specifications, SDK packages, or .well-known API metadata were found on xinhekeji.net (probed 2026-07-21: /.well-known/security.txt, /openid-configuration, /oauth-authorization-server, /api-catalog, /ai-plugin.json, /llms.txt all 404; no api./developer./open./docs. subdomains resolve; no first-party packages on npm/PyPI; no GitHub organization located).
