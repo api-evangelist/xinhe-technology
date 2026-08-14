@@ -27,7 +27,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-13'
 tags:
 - Company
 - Enterprise
@@ -48,13 +48,34 @@ common:
 - type: Website
   url: https://www.xinhekeji.net/
 - type: Login
-  url: http://cem.xinhekeji.net
+  url: https://cem.xinhekeji.net
 - type: Support
   url: https://www.xinhekeji.net/ContactUs
 - type: LLMsTxt
   url: llms/xinhe-technology-llms.txt
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-13'
   status: minimal
   artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Xinhe Technology ships 心愿盒 Match Box only as an end-user product — a WeChat mini
+    program for consumers and a brand CEM console at cem.xinhekeji.net — and the only HTTP
+    API behind it is that console's own private Django REST Framework backend at
+    https://cem.xinhekeji.net/api/, which answers anonymous callers with 401
+    "Authentication credentials were not provided." and serves no spec (/api/swagger.json,
+    /api/openapi.json, /api/v3/api-docs all 404); there is no developer portal, no api./
+    developer./open./docs. subdomain, no SDK on npm or PyPI, and no GitHub organization.
+  evidence:
+  - url: https://cem.xinhekeji.net/api/cem/getBrand/
+    status: 401
+  - url: https://cem.xinhekeji.net/api/openapi.json
+    status: 404
+  - url: https://www.xinhekeji.net/llms.txt
+    status: 404
+  - url: https://api.github.com/orgs/xinhekeji
+    status: 404
+  checked: '2026-08-13'
