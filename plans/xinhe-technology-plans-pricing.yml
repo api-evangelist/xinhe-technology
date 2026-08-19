@@ -1,0 +1,18 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.xinhekeji.net/
+plan_count: 0
+currency: null
+note: >-
+  Xinhe Technology publishes NO pricing of any kind. The public marketing site is a
+  four-route React SPA (home, /Example customer cases, /AboutUs, /ContactUs) — there is no
+  pricing page, no plan table, no tier names and no published rate for the 心愿盒 Match Box
+  sampling programs or the CEM console. The bundled site JavaScript contains no pricing,
+  plan or tier vocabulary at all. Commercial engagement runs entirely through the contact
+  page (paul.xu@xinhekeji.net) and the brand console at cem.xinhekeji.net, both of which
+  require a sales conversation or an existing brand account. Recorded as an honest zero:
+  checked and nothing published, not "not checked".
+plans: []
+evidence:
+- {url: 'https://www.xinhekeji.net/', status: 200, finding: 'React SPA; routes are /, /Example, /AboutUs, /ContactUs only — no pricing route'}
+- {url: 'https://www.xinhekeji.net/static/js/main.50847c3c.chunk.js', status: 200, finding: 'site bundle contains no pricing/plan/tier strings'}

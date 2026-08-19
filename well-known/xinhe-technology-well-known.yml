@@ -1,0 +1,56 @@
+generated: '2026-08-13'
+method: probed
+source: live HTTPS probes of every Xinhe Technology host resolved on 2026-08-13
+note: >-
+  Every /.well-known/ path was probed on all three live company hosts and NOT ONE returned a
+  real document. The marketing host answers a hard 404 for every path. The brand console
+  (cem.xinhekeji.net) and the admin console (admin.xinhekeji.net) are create-react-app /
+  Vue single-page apps whose servers answer HTTP 200 with the SPA index.html shell for ANY
+  unknown path — that 200 is a catch-all, not a document, and is recorded here as a MISS.
+  No WellKnown or SecurityTxt pointer is emitted in apis.yml, because the provider serves
+  none of these surfaces.
+hosts:
+- host: https://www.xinhekeji.net
+  role: marketing website
+  behavior: hard 404 (text/html error page) on unknown paths
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://cem.xinhekeji.net
+  role: brand CEM console (React SPA)
+  behavior: SPA catch-all — HTTP 200 text/html index shell (3,443 bytes) for every path
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/oauth-protected-resource, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/api-catalog, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/agent.json, status: 200, document: false, reason: spa-shell-html}
+  - {path: /llms.txt, status: 200, document: false, reason: spa-shell-html}
+- host: https://admin.xinhekeji.net
+  role: internal admin console (Vue SPA)
+  behavior: SPA catch-all — HTTP 200 text/html index shell (877 bytes) for every path
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, reason: spa-shell-html}
+  - {path: /.well-known/agent.json, status: 200, document: false, reason: spa-shell-html}
+  - {path: /llms.txt, status: 200, document: false, reason: spa-shell-html}
+summary:
+  hosts_probed: 3
+  paths_probed: 22
+  real_documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  ai_plugin: false
+  agent_card: false

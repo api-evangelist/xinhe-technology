@@ -1,22 +1,38 @@
 # Xinhe Technology (心愿盒 Match Box)
 
-> Shanghai Xinhe Box Technology Co., Ltd. (上海心盒科技有限公司) operates 心愿盒 Match Box, a consumer experience co-creation platform. Brands distribute product samples to precisely targeted consumer segments (matched on age, gender, occupation, and consumption-preference tags), collect structured questionnaire feedback plus free-form reviews for agile marketing iteration, and convert triallists into private-domain traffic on the brand's WeChat official account or mini program. Backed by DCM Ventures. The company publishes no public developer portal, API documentation, or machine-readable API specifications as of 2026-07-21.
+> Shanghai Xinhe Box Technology Co., Ltd. (上海心盒科技有限公司) operates 心愿盒 Match Box, a consumer experience co-creation platform. Brands distribute product samples to precisely targeted consumer segments (matched on age, gender, occupation, and consumption-preference tags), collect structured questionnaire feedback plus free-form reviews for agile marketing iteration, and convert triallists into private-domain traffic on the brand's WeChat official account or mini program. Founded 2020-12-18; seed round from DCM Ventures. The company publishes no public developer portal, API documentation, SDK, or machine-readable API specification as of 2026-08-13.
 
 <!--
-generated: '2026-07-21'
+generated: '2026-08-13'
 method: generated
-source: apis.yml + https://www.xinhekeji.net/ (site bundle; /llms.txt returned 404)
+source: apis.yml + https://www.xinhekeji.net/ and https://cem.xinhekeji.net/ (site bundles; all /.well-known/* and /llms.txt probes miss)
 -->
 
 ## Company
 
-- [Website (Match Box 消费者体验共创平台)](https://www.xinhekeji.net/): Product marketing site (Chinese; React SPA)
+- [Website (Match Box 消费者体验共创平台)](https://www.xinhekeji.net/): Product marketing site (Chinese; React SPA, four routes)
 - [Customer cases](https://www.xinhekeji.net/Example): Brand case studies (醒肌密, 金活医药, 偶爱你)
 - [About us](https://www.xinhekeji.net/AboutUs): Company profile
-- [Contact us](https://www.xinhekeji.net/ContactUs): Contact page (paul.xu@xinhekeji.net)
-- [Login / Register (brand console)](http://cem.xinhekeji.net): CEM console for brands; hosted in mainland China and generally unreachable from outside
+- [Contact us](https://www.xinhekeji.net/ContactUs): Contact page (paul.xu@xinhekeji.net; info@xinhekeji.net)
+- [Login / Register (brand CEM console)](https://cem.xinhekeji.net): 心盒共创CEM console for brand customers; phone/SMS or WeChat QR sign-in
 - ICP filing: 沪ICP备2021001714号-1 (Shanghai)
 
 ## APIs
 
-No public APIs, developer documentation, OpenAPI/AsyncAPI specifications, SDK packages, or .well-known API metadata were found on xinhekeji.net (probed 2026-07-21: /.well-known/security.txt, /openid-configuration, /oauth-authorization-server, /api-catalog, /ai-plugin.json, /llms.txt all 404; no api./developer./open./docs. subdomains resolve; no first-party packages on npm/PyPI; no GitHub organization located).
+No public API product, developer program, documentation, OpenAPI/AsyncAPI specification, GraphQL endpoint, MCP server, agent card, SDK package or Postman collection is published by Xinhe Technology (re-probed 2026-08-13).
+
+What does exist is a **private, undocumented, credential-gated application backend** serving the brand CEM console — recorded here as a measurement, not as an API product:
+
+- Base: `https://cem.xinhekeji.net/api/` (staging siblings `cem-alpha.` and `cem-beta.` appear in the console bundle)
+- Implementation: Django REST Framework; JSON `{"detail": ...}` error envelope; JWT issuance at `/core/token/obtain/` and `/core/token/refresh/`, plus WeChat QR sign-in
+- Anonymous requests return **HTTP 401 `{"detail":"Authentication credentials were not provided."}`** — verified 2026-08-13 against `/api/cem/getBrand/`, `/api/cem/getProjectList/`, `/api/cem/getRegionList/`
+- No specification is served: `/api/swagger.json`, `/api/openapi.json`, `/api/v2/api-docs`, `/api/v3/api-docs`, `/api/doc.html`, `/api/swagger-ui.html` all return 404 from the API origin
+
+No OpenAPI has been authored for these endpoints and none should be: they are an application's own tenant-gated backend, not a contract the company published for third parties.
+
+## Discovery probes (all miss, 2026-08-13)
+
+- `/.well-known/security.txt`, `/openid-configuration`, `/oauth-authorization-server`, `/oauth-protected-resource`, `/api-catalog`, `/ai-plugin.json`, `/agent-card.json`, `/agent.json`, `/llms.txt` — 404 on www.xinhekeji.net; SPA catch-all HTML 200 (not a document) on cem. and admin.
+- No `api.`, `developer.`, `open.`, `docs.`, `openapi.`, `app.` or `m.` subdomain resolves
+- No first-party packages on npm or PyPI; no GitHub organization (`github.com/xinhekeji` → 404, zero repository search hits)
+- No published pricing, plans, rate limits, status page, changelog, security.txt, vulnerability-disclosure policy or trust center
