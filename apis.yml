@@ -7,6 +7,17 @@ description: 'Xinhe Technology (Shanghai Xinhe Box Technology Co., Ltd. / 上海
   triallists into private-domain traffic on WeChat official accounts and mini programs. A DCM Ventures
   portfolio company; it publishes no public developer portal or API surface as of July 2026.'
 url: https://raw.githubusercontent.com/api-evangelist/xinhe-technology/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
